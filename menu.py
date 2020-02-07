@@ -94,7 +94,6 @@ def DirManager():
         Open=open(name, "tw")
         Open.close()
         print("*File was created*")
-        FileManager()
         DirManager()
     elif cmd == 6:
         name = input("New dir's name: ")
