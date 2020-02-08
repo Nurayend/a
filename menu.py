@@ -23,10 +23,10 @@ def DirInfo():
     print(" 6 - add new directory to this directory")
 def FileManager():
     FileInfo()
-    cmd = int(input())
-    if cmd == 0:
+    a = int(input())
+    if a == 0:
         MainMenu()
-    elif cmd == 1:
+    elif a == 1:
         name = input("Name of file(Delete):") + ".txt"
         try:
             os.remove(name)
@@ -34,20 +34,20 @@ def FileManager():
             print("*This file doesn't exist*")
         else :print("*File was deleted*")
         FileManager()
-    elif cmd == 2:
+    elif a == 2:
         name = input("Old file's name: ")+".txt"
         Nname = input("New file's name: ")+".txt"
         os.rename(name, Nname)
         print("*File name was changed*")
         FileManager()
-    elif cmd == 3:
+    elif a == 3:
         name=input("File's name: ")+".txt"
         Open=open(name, "at")
         content = input("Your contetnt(Add): ")
         Open.write(content)
         Open.close()
         FileManager()
-    elif cmd == 4:
+    elif a == 4:
         name=input("File's name: ")+".txt"
         Open=open(name, "wt")
         content = input("Your contetnt(rewrite):")
@@ -56,10 +56,10 @@ def FileManager():
         FileManager()
 def DirManager():
     DirInfo()
-    cmd = int(input())
-    if cmd == 0:
+    a = int(input())
+    if a == 0:
         MainMenu()
-    elif cmd == 1:
+    elif a == 1:
         name = input("Old dir's name:")
         Nname = input("New dir's name:")
         try:
@@ -69,7 +69,7 @@ def DirManager():
         else :
             print("***Name was changed***")
         DirManager()
-    elif cmd == 2:
+    elif a == 2:
         num = 0
         for f in os.listdir():
             File = os.path.join(f)
@@ -77,7 +77,7 @@ def DirManager():
                 num+=1
         print("***Number of file is:", num)
         DirManager()
-    elif cmd == 3:
+    elif a == 3:
         num = 0
         for f in os.listdir():
             Dir = os.path.join(f)
@@ -85,17 +85,17 @@ def DirManager():
                 num+=1
         print("***Number of dir is:", num)
         DirManager()
-    elif cmd == 4:
+    elif a == 4:
         for f in os.listdir():
             print(f)
         DirManager()
-    elif cmd == 5:
+    elif a == 5:
         name = input("New file name: ") + ".txt"
         Open=open(name, "tw")
         Open.close()
         print("*File was created*")
         DirManager()
-    elif cmd == 6:
+    elif a == 6:
         name = input("New dir's name: ")
         os.mkdir(name)
         print("***Dir was created***")
